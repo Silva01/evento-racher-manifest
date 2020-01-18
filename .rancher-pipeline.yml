@@ -1,0 +1,13 @@
+stages:
+- name: Teste
+  steps:
+  - applyYamlConfig:
+      path: ./zabbix-all-rancher.yaml
+  - applyYamlConfig:
+      path: ./zabbix-ingress.yml
+  when:
+    branch:
+      include:
+      - master
+timeout: 60
+notification: {}
